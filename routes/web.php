@@ -1,14 +1,16 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('welcome');
-})->name('main');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('main');
+Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::get('products', function () {
     return 'This is the list of products';
